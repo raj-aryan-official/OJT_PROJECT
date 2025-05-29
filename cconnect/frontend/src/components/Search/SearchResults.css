@@ -1,0 +1,135 @@
+.search-results-container {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-results-header {
+  margin-bottom: 24px;
+}
+
+.search-results-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.search-tabs {
+  display: flex;
+  gap: 16px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 16px;
+}
+
+.search-tabs button {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.search-tabs button.active {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.search-tabs button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+}
+
+.search-results-content {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 24px;
+}
+
+.search-results-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.products-grid,
+.shops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px;
+  color: #666;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.search-results-loading,
+.search-results-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  color: #666;
+}
+
+.search-results-loading i,
+.search-results-error i {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.search-results-error i {
+  color: #dc3545;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .search-results-content {
+    grid-template-columns: 200px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-results-container {
+    padding: 16px;
+  }
+
+  .search-results-content {
+    grid-template-columns: 1fr;
+  }
+
+  .search-tabs {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .search-tabs button {
+    white-space: nowrap;
+  }
+
+  .products-grid,
+  .shops-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid,
+  .shops-grid {
+    grid-template-columns: 1fr;
+  }
+} 
